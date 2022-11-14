@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import PostCard from './PostCard';
 
 export default function Home(props) {
     const [posts, setPosts] = useState([])
@@ -15,7 +16,7 @@ export default function Home(props) {
     return (
     <>
     <h1 className='text-center'>Home Page</h1>
-    {posts.map(x => <p>{x.content}</p>)}
+    {posts.map(x => <PostCard post = {posts}/>)}
     </>
   )
 }
