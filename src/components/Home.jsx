@@ -5,7 +5,7 @@ export default function Home(props) {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch("https://kekambas-blog.herokuapp.com//blog/posts")
+        fetch("https://kekambas-blog.herokuapp.com/blog/posts")
         .then(response => response.json())
         .then(result => {
             console.log(result)
@@ -16,7 +16,7 @@ export default function Home(props) {
     return (
     <>
     <h1 className='text-center'>Home Page</h1>
-    {posts.map(x => <PostCard post = {posts}/>)}
+    {posts.map(post => <PostCard key = {post.id} post = {post}/>)}
     </>
   )
 }
